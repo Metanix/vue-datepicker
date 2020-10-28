@@ -1,0 +1,94 @@
+{
+  "name": "@mathieustan/vue-datepicker",
+  "description": "A clean datepicker made with VueJs",
+  "version": "0.2.2",
+  "author": "Mathieu Stanowski <mathieu.stan@gmail.com>",
+  "keywords": [
+    "vue",
+    "vuejs",
+    "javascript",
+    "vue-component",
+    "date",
+    "month",
+    "quarter",
+    "picker",
+    "datepicker",
+    "monthpicker",
+    "quarterpicker"
+  ],
+  "license": "MIT",
+  "files": [
+    "dist/*.js",
+    "src/*"
+  ],
+  "main": "dist/vue-datepicker.umd.js",
+  "module": "dist/vue-datepicker.esm.js",
+  "unpkg": "dist/vue-datepicker.min.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathieustan/vue-datepicker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mathieustan/vue-datepicker/issues"
+  },
+  "homepage": "https://vue-datepicker.netlify.com/",
+  "scripts": {
+    "build": "npm run build:browser && npm run build:es && npm run build:umd",
+    "build:doc": "cd doc-src && npm install && npm run build",
+    "build:browser": "rollup --config build/rollup.config.browser.js",
+    "build:es": "rollup --config build/rollup.config.es.js",
+    "build:umd": "rollup --config build/rollup.config.umd.js",
+    "send:coverage": "cat ./tests/coverage/lcov.info | codacy-coverage",
+    "lint": "vue-cli-service lint --ext .js,.vue src tests/unit/* build/*",
+    "lint:fix": "npm run lint --fix",
+    "test:client": "vue-cli-service test:unit",
+    "prepublishOnly": "npm run lint:fix && npm run test:client && npm run build"
+  },
+  "dependencies": {
+    "body-scroll-lock": "^2.6.1",
+    "dayjs": "^1.8.14"
+  },
+  "peerDependencies": {
+    "core-js": "^2.6.5",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-plugin-unit-jest": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "babel-plugin-dynamic-import-node-babel-7": "^2.0.7",
+    "codacy-coverage": "^3.4.0",
+    "core-js": "^2.6.5",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "mockdate": "^2.0.2",
+    "node-sass": "^4.12.0",
+    "rollup": "^1.14.6",
+    "rollup-plugin-babel": "4.2.0",
+    "rollup-plugin-buble": "^0.19.8",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-css-porter": "^0.1.2",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-resolve": "4.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-sizes": "^0.5.1",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-vue": "4.2.0",
+    "sass": "^1.18.0",
+    "sass-loader": "^7.1.0",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "directories": {
+    "test": "tests"
+  }
+}
